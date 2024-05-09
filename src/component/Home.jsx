@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-export const Home = () => {
-    return (
+const Home = () => {
+    return ( 
         <div className='Home container'>
             <h2>
                 <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -10,11 +10,11 @@ export const Home = () => {
             </h2>
             <Link to="/base">
                 <button>
-                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
                         Click Me
-                    </motion.button>
                 </button>
             </Link>
         </div>
-    );
+     );
 }
+ 
+export default Home;
