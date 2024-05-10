@@ -6,8 +6,9 @@ const Header = () => {
             <div className="logo"></div>
             <motion.div 
                 className="title"
-                initial={{ y: -10 }}
-                animate={{ y: 0 }}
+                initial={{ y: -250 }}
+                animate={{ y: -10 }}
+                transition={{delay:0.2 ,type:'spring',stiffness:80}}
             >
                 <h1>Pizza Boy!</h1>
             </motion.div>

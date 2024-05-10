@@ -1,12 +1,14 @@
-export const Order = () => {
+const Order = () => {
     return ( 
         <div>
-            <h2>
-                Thank you for your order..
-            </h2>
-            <p>
-                You order a pizza with toppings
-            </p>
-        </div>
+        <h2>
+            Thank you for your order..
+        </h2>
+        <p>
+            You order a pizza with toppings
+        </p>
+    </div>
      );
 }
+ 
+export default Order;
