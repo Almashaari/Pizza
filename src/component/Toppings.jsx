@@ -1,12 +1,36 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
+const containerVariants = {
+    hidden: {
+        opacity: 0,
+        x: '100vw'
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: 'spring',
+            delay: 0.5
+        }
+    },
+    exit: {
+        x: '-100vw',
+        transition: {
+            ease: 'easeInOut',
+        }
+    }
+}
+
 const Toppings = ({ addTopping, pizza }) => {
     let toppings = ['Mushrooms', 'Pepperoni', 'Onions', 'Extra cheese', 'Olives', 'Tomatoes']
+
     return (
         <motion.div className="toppings container"
-            initial={{ x: '100vw' }}
-            animate={{ x: 0 }}
-            transition={{ type: 'spring', delay: 0.5 }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
         >
             <h3>Step 2: Choose Toppings</h3>
             <ul>
@@ -22,17 +46,17 @@ const Toppings = ({ addTopping, pizza }) => {
                     )
                 })}
             </ul>
-                <Link to="/order">
-                    <motion.button
-                        whileHover={{
-                            scale: 1.1,
-                            textShadow: "0px 0px 8px rgb(255,255,255)",
-                            boxShadow: "0px 0px 8px rgb(255,255,255)",
-                        }}
-                    >
-                        Order
-                    </motion.button>
-                </Link>
+            <Link to="/order">
+                <motion.button
+                    whileHover={{
+                        scale: 1.1,
+                        textShadow: "0px 0px 8px rgb(255,255,255)",
+                        boxShadow: "0px 0px 8px rgb(255,255,255)",
+                    }}
+                >
+                    Order
+                </motion.button>
+            </Link>
         </motion.div>
     );
 }
